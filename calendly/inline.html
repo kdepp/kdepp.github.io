@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Embed Calendly - Click on &lt;a&gt; to show popup </title>
+</head>
+<body>
+
+<style>
+  body {
+    background: #000;
+  }
+
+  .calendly-inline-widget {
+    background: #fff;
+  }
+
+  .actions {
+    margin-bottom: 30px;
+    color: #fff;
+  }
+
+  .actions button {
+    margin-left: 30px;
+  }
+</style>
+
+<script>
+  function setCalendlySize(width, height) {
+    const $el = document.querySelector(".calendly-inline-widget") ;
+
+    if (width > 0) {
+      $el.style.width = width + "px";
+    } else {
+      $el.style.width = "auto";
+    }
+
+    if (height > 0) {
+      $el.style.height = height + "px";
+    } else {
+      $el.style.height = "auto";
+    }
+  }
+</script>
+
+<div class="actions">
+  Size of calendly
+  <button onclick="setCalendlySize(-1, 800)">Page width</button>
+  <button onclick="setCalendlySize(700, 700)">700px * 700px</button>
+  <button onclick="setCalendlySize(500, 500)">500px * 500px</button>
+  <button onclick="setCalendlySize(300, 300)">300px * 300px</button>
+</div>
+
+<!-- Calendly inline widget begin -->
+<div class="calendly-inline-widget" data-url="https://calendly.com/taining/30min?hide_landing_page_details=1&hide_gdpr_banner=1&hide_event_type_details=1" style="min-width:320px;height:630px;"></div>
+<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<!-- Calendly inline widget end -->
+</body>
+</html>
